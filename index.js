@@ -15,29 +15,29 @@ const numberTwo = +argumentTwo;
 
 var answer;
 
-// if (operator == "+") {
-//   answer = numberOne + numberTwo;
-// } else if (operator == "-") {
-//   answer = numberOne - numberTwo;
-// } else if (operator == "*") {
-//   answer = numberOne * numberTwo;
-// } else if (operator == "/") {
-//   answer = numberOne / numberTwo;
-// }
-
-switch (operator) {
-  case "+":
-    answer = numberOne + numberTwo;
-    break;
-  case "-":
-    answer = numberOne - numberTwo;
-    break;
-  case "*":
-    answer = numberOne * numberTwo;
-    break;
-  case "/":
-    answer = numberOne / numberTwo;
-    break;
+if (operator == "+") {
+  answer = numberOne + numberTwo;
+} else if (operator == "-") {
+  answer = numberOne - numberTwo;
+} else if (operator == "*") {
+  answer = numberOne * numberTwo;
+} else if (operator == "/") {
+  answer = numberOne / numberTwo;
 }
+
+// switch (operator) {
+//   case "+":
+//     answer = numberOne + numberTwo;
+//     break;
+//   case "-":
+//     answer = numberOne - numberTwo;
+//     break;
+//   case "*":
+//     answer = numberOne * numberTwo;
+//     break;
+//   case "/":
+//     answer = numberOne / numberTwo;
+//     break;
+// }
 
 console.log("\nThe answer is " + answer);
