@@ -2,42 +2,34 @@ const readline = require('readline-sync');
 
 console.log("Welcome to the Calculator!");
 
-console.log('\nPlease enter your first number: ');
-const argumentOne = readline.prompt();
-const numberOne = +argumentOne;
-
 console.log('\nPlease enter an operator: ');
 const operator = readline.prompt();
 
-console.log('\nPlease enter your second number: ');
-const argumentTwo = readline.prompt();
-const numberTwo = +argumentTwo;
+console.log("How many numbers do you want to " + operator + " together?");
 
-var answer;
+var amountOfNumbersString = readline.prompt();
+var amountOfNumbers = +amountOfNumbersString;
 
-if (operator == "+") {
-  answer = numberOne + numberTwo;
-} else if (operator == "-") {
-  answer = numberOne - numberTwo;
-} else if (operator == "*") {
-  answer = numberOne * numberTwo;
-} else if (operator == "/") {
-  answer = numberOne / numberTwo;
+var numbers = [amountOfNumbers];
+var i;
+for (i = 0; i < amountOfNumbers; i++) {
+  console.log("Enter number " + (i + 1) + ":");
+  var numberEntered = readline.prompt();
+  numbers[i] = +numberEntered;
 }
 
-// switch (operator) {
-//   case "+":
-//     answer = numberOne + numberTwo;
-//     break;
-//   case "-":
-//     answer = numberOne - numberTwo;
-//     break;
-//   case "*":
-//     answer = numberOne * numberTwo;
-//     break;
-//   case "/":
-//     answer = numberOne / numberTwo;
-//     break;
-// }
+var answer = numbers[0];
+for (i = 1; i <amountOfNumbers; i++) {
+  if (operator == "+") {
+    answer = answer + numbers[i];
+  } else if (operator == "-") {
+    answer = answer - numbers[i];
+  } else if (operator == "*") {
+    answer = answer * numbers[i];
+  } else if (operator == "/") {
+    answer = answer / numbers[i];
+  }
+}
+
 
 console.log("\nThe answer is " + answer);
