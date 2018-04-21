@@ -13,20 +13,32 @@ function getNumberArray(operator) {
   return numbers;
 }
 
+// function calculateAnswer(operator, numbers) {
+//   let answer = numbers[0];
+//   for (let i = 1; i < numbers.length; i++) {
+//     if (operator == "+") {
+//       answer += numbers[i];
+//     } else if (operator == "-") {
+//       answer -= numbers[i];
+//     } else if (operator == "*") {
+//       answer *= numbers[i];
+//     } else if (operator == "/") {
+//       answer /= numbers[i];
+//     }
+//   }
+//   return answer;
+// }
+
 function calculateAnswer(operator, numbers) {
-  let answer = numbers[0];
-  for (let i = 1; i < numbers.length; i++) {
-    if (operator == "+") {
-      answer += numbers[i];
-    } else if (operator == "-") {
-      answer -= numbers[i];
-    } else if (operator == "*") {
-      answer *= numbers[i];
-    } else if (operator == "/") {
-      answer /= numbers[i];
+    if (operator === '+') {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+    } else if (operator === '-') {
+        return numbers.slice(1).reduce((acc, curr) => acc - curr, numbers[0]);
+    } else if (operator === '*') {
+        return numbers.reduce((acc, curr) => acc * curr, 1);
+    } else if (operator === '/') {
+        return numbers.slice(1).filter(x => x !== 0).reduce((acc, curr) => acc / curr, numbers[0]);
     }
-  }
-  return answer;
 }
 
 exports.performOneArithmeticCalculation = function() {
