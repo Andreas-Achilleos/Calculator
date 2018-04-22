@@ -10,7 +10,7 @@ exports.userStringInput = userStringInput;
 exports.userNumberInput = function(prompt) {
   let response;
   do {
-    response = +userStringInput(prompt)
-  } while (isNaN(response));
+    response = +userStringInput(prompt);
+  } while (isNaN(response) && (console.log(`${response} is not a number`) || true));
   return response;
 }

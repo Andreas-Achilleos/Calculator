@@ -1,7 +1,15 @@
 const userInput = require('./userInput');
 
+function operatorIsValid(operator) {
+    return ['+', '-', '*', '/'].includes(operator)
+}
+
 function getOperator() {
-  return userInput.userStringInput("Please enter the operator: ");
+  let operator;
+  do {
+    operator = userInput.userStringInput("Please enter the operator: ");
+  } while (!operatorIsValid(operator) && (console.log(`The  operator '${operator}' is not supported`) || true))
+  return operator;
 }
 
 function getNumberArray(operator) {
